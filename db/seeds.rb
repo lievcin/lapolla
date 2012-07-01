@@ -37,7 +37,7 @@ team14 = Team.create(	:name 	=> "Japan", :acronim => "JPN")
 team15 = Team.create(	:name 	=> "Honduras", :acronim => "HON")
 team16 = Team.create(	:name 	=> "Morocco", :acronim => "MOR")
 
-admin1 = User.create( 	:username => "elmegapollon", :email => "elmegapollon@gmail.com", :password => "elmegapollon", :password_confirmation => "elmegapollon")
+admin1 = Admin.create(:username => "elmegapollon", :email => "elmegapollon@gmail.com", :password => "elmegapollon", :password_confirmation => "elmegapollon")
 
 
 game1 = Game.create(:round_id => round1.id, :kickoff => "26.07.12 17:00", :home_team => team3.id, :away_team => team4.id)
