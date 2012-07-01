@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
 
-  # before_filter :authenticate_admin!
+	before_filter :authenticate_admin!
 	
 	def index
 		@title = "List of Teams"

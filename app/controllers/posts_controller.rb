@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  # before_filter :authenticate_admin!, :except => [:show, :news]
+	before_filter :authenticate_user!
 	
 	def index
 		@title = "List of posts"
