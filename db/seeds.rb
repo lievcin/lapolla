@@ -30,6 +30,7 @@ team14 = Team.create(	:name 	=> "Japan", :acronym => "JPN")
 team15 = Team.create(	:name 	=> "Honduras", :acronym => "HON")
 team16 = Team.create(	:name 	=> "Morocco", :acronym => "MOR")
 
+admin1 = User.create( 	:username => "elmegapollon", :email => "elmegapollon@gmail.com", :password => "elmegapollon", :password_confirmation => "elmegapollon")
 
 
 game1 = Game.create(:round_id => round1.id, :kickoff => "26.07.12 17:00", :home_team => team3.id, :away_team => team4.id)
@@ -59,5 +60,4 @@ game22 = Game.create(:round_id => round3.id, :kickoff => "01.08.12 14:30", :home
 game23 = Game.create(:round_id => round3.id, :kickoff => "01.08.12 17:00", :home_team => team14.id, :away_team => team15.id)
 game24 = Game.create(:round_id => round3.id, :kickoff => "01.08.12 17:00", :home_team => team13.id, :away_team => team16.id)
 
-admin1 = User.create( 	:username => "elmegapollon", :email => "elmegapollon@gmail.com", :password => "elmegapollon", :password_confirmation => "elmegapollon")
 
