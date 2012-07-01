@@ -12,6 +12,7 @@ Game.delete_all
 Round.delete_all
 Team.delete_all
 User.delete_all
+Admin.delete_all
 Bet.delete_all
 
 cup1 = Cup.create( :name => "Olympic Football 2012" )
