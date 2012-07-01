@@ -7,28 +7,35 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
+Cup.delete_all
+Game.delete_all
+Round.delete_all
+Team.delete_all
+User.delete_all
+Bet.delete_all
+
 cup1 = Cup.create( :name => "Olympic Football 2012" )
 
 round1 = Round.create(	:name 	=> "Group Stage Round 1", :leg 	=> 1, :cup_id => cup1.id)
 round2 = Round.create(	:name 	=> "Group Stage Round 2", :leg 	=> 2, :cup_id => cup1.id)
 round3 = Round.create(	:name 	=> "Group Stage Round 3", :leg 	=> 3, :cup_id => cup1.id)
 
-team1 = Team.create(	:name 	=> "Great Britain", :acronym => "GBR")
-team2 = Team.create(	:name 	=> "Senegal", :acronym => "SEN")
-team3 = Team.create(	:name 	=> "United Arab Emirates", :acronym => "UAE")
-team4 = Team.create(	:name 	=> "Uruguay", :acronym => "URU")
-team5 = Team.create(	:name 	=> "Mexico", :acronym => "MEX")
-team6 = Team.create(	:name 	=> "South Korea Republic", :acronym => "SKO")
-team7 = Team.create(	:name 	=> "Gabon", :acronym => "GAB")
-team8 = Team.create(	:name 	=> "Switzerland", :acronym => "SWZ")
-team9 = Team.create(	:name 	=> "Brazil", :acronym => "BRA")
-team10 = Team.create(	:name 	=> "Egypt", :acronym => "EGY")
-team11 = Team.create(	:name 	=> "Belarus", :acronym => "BLY")
-team12 = Team.create(	:name 	=> "New Zealand", :acronym => "NZL")
-team13 = Team.create(	:name 	=> "Spain", :acronym => "SPA")
-team14 = Team.create(	:name 	=> "Japan", :acronym => "JPN")
-team15 = Team.create(	:name 	=> "Honduras", :acronym => "HON")
-team16 = Team.create(	:name 	=> "Morocco", :acronym => "MOR")
+team1 = Team.create(	:name 	=> "Great Britain", :acronim => "GBR")
+team2 = Team.create(	:name 	=> "Senegal", :acronim => "SEN")
+team3 = Team.create(	:name 	=> "United Arab Emirates", :acronim => "UAE")
+team4 = Team.create(	:name 	=> "Uruguay", :acronim => "URU")
+team5 = Team.create(	:name 	=> "Mexico", :acronim => "MEX")
+team6 = Team.create(	:name 	=> "South Korea Republic", :acronim => "SKO")
+team7 = Team.create(	:name 	=> "Gabon", :acronim => "GAB")
+team8 = Team.create(	:name 	=> "Switzerland", :acronim => "SWZ")
+team9 = Team.create(	:name 	=> "Brazil", :acronim => "BRA")
+team10 = Team.create(	:name 	=> "Egypt", :acronim => "EGY")
+team11 = Team.create(	:name 	=> "Belarus", :acronim => "BLY")
+team12 = Team.create(	:name 	=> "New Zealand", :acronim => "NZL")
+team13 = Team.create(	:name 	=> "Spain", :acronim => "SPA")
+team14 = Team.create(	:name 	=> "Japan", :acronim => "JPN")
+team15 = Team.create(	:name 	=> "Honduras", :acronim => "HON")
+team16 = Team.create(	:name 	=> "Morocco", :acronim => "MOR")
 
 admin1 = User.create( 	:username => "elmegapollon", :email => "elmegapollon@gmail.com", :password => "elmegapollon", :password_confirmation => "elmegapollon")
 
