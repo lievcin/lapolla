@@ -2,6 +2,9 @@ class BetsController < ApplicationController
 
 	before_filter :authenticate_user!
 
+  def test
+  end
+  
 	def bet_submission
 		@title = "Placing Bet"
 		@user = current_user
