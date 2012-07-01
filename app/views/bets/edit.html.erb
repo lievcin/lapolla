@@ -1,0 +1,22 @@
+<h1>Edit Bets</h1>
+
+<%= Team.find(@game.home_team).name %> - <%= Team.find(@game.away_team).name %>
+
+<%= form_for(@bet) do |f| %>
+	
+	<%= f.hidden_field :game_id, :value => @game.id %>
+
+	<div> <%= Team.find(@game.home_team).name %>  
+		<span class="field">
+			<%= f.number_field :home_bet %> 
+		</span>
+	</div>
+	<div> <%= Team.find(@game.away_team).name %>  
+		<span class="field"> 
+			<%= f.number_field :away_bet %> 
+		</span>
+	</div>
+	<div class="actions">
+	    <%= f.submit %>
+	 </div>
+<% end -%>

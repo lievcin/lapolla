@@ -1,0 +1,14 @@
+<h1>News!</h1>
+
+<p>Ultimas noticias del gran pollon:</p>
+
+<% @posts.each do |post| %>
+	<div class="post">
+		<i><%= post.created_at.strftime("%d.%m.%y %H:%M")%></i>
+		<h2><%= post.headline %></h2>
+		<p><%= truncate(post.content, :length => 300, :separator => ' ') %> 
+			<% if post.content.length > 300 %>
+				<%= link_to "more", post %></p>
+			<% end %>
+	</div>
+<% end %>

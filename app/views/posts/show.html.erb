@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+	<div class="span8">
+
+		<h2><%= @post.headline %></h2>
+
+		<p>Created: <%= @post.created_at.strftime("%d.%m.%y %H:%M") %> | Modified: <%= @post.updated_at.strftime("%d.%m.%y %H:%M") %>
+		</p>
+
+		<p><%= simple_format(@post.content) %></p>
+
+		<% if admin_signed_in? %>
+		    <%= link_to 'Edit', edit_post_path(@post) %> |
+			<%= link_to 'Back', posts_path %>
+		<% else %>
+			<b><%= link_to 'back', root_path %></b>
+		<% end %>
+	</div>
+	<div class="span2">
+
+	</div>
+</div>
+
+

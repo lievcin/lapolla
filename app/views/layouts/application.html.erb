@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>El mega Pollon!
+    <% unless @title.nil? %>
+      | <%= @title %>
+    <% end %>
+  </title>
+  
+
+  <%= analytics_init if Rails.env.production? %>
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	
+	<div class="container">
+
+    <%= render 'layouts/header' %>
+
+  	<div class="main">
+
+  		<% flash.each do |key, value| %>
+      		<div class="alert alert-<%= key %>"><%= value %></div>
+    		<% end %>
+
+  		<%= yield %>
+
+  	</div>
+       
+	</div>
+
+</body>
+</html>

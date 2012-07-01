@@ -1,0 +1,50 @@
+<div class="row">
+	<% if user_signed_in? %>
+			
+	<% else %>
+		<div class="span12" id="welcome">
+			<div class="hero-unit">
+				<h1>El mega Pollon!</h1>
+				<p>Registrese para participar en el mega pollon con Calique, Luisgui, Juanes, Santi y Liev</p>
+				<p><%= link_to "Register", new_user_registration_path, :class => "btn btn-success btn-large" %></p>
+				<%= link_to "Already registered? Log in!",  user_session_path, :class => "zusatzlink" %>
+			</div>
+		</div>
+	<% end %>
+
+
+	<div class="span12">
+
+		<div class="well">
+			<h2>Next Games, these are your predictions!</h2>
+			<br />
+			
+			<table class="table table-striped table-condensed">
+				<% if @games %>
+				<% @games.each do |game| %>
+					<tr>
+						<% home_team = Team.find(game.home_team) %>
+						<% away_team = Team.find(game.away_team) %>
+						<td><%= home_team.name %></td>
+						<td> - </td>
+						<td><%= away_team.name %></td>
+						<% if user_signed_in? %>
+							<% user_bet = @bets.where(:game_id => game.id).first %>
+							<% if user_bet.nil? %>
+								<td>- : -</td>
+							<% else %>
+								<td><%= user_bet.home_bet %> : <%= user_bet.away_bet %></td>
+							<% end %>
+						<% end %>
+						<td>in <%= distance_of_time_in_words(Time.now, game.kickoff) %></td>
+					</tr>	
+				<% end %>
+				<% end %>				
+			</table>
+		</div>
+	</div>
+
+</div>
+
+
+

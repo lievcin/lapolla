@@ -1,0 +1,235 @@
+
+body {
+    background: url("bg-noise.jpg") repeat scroll 0 0 transparent;
+}
+
+/* Header */
+
+#header {
+  background-color: #FCFCFC;
+  overflow: hidden;
+  height: 150px;
+  -moz-border-radius-bottomright:    10px;
+  -moz-border-radius-bottomleft:    10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom: 1px inset #848484;
+}
+
+#logo {
+  float: left;
+}
+
+/* Head Right */
+
+#head_right {
+  float: right;
+  padding-right: 10px;
+  padding-left: 20px;
+  width: 40%;
+}
+
+#session_info  {
+  float: right;
+}
+
+#session_info a {
+  font-weight: bold;
+}
+
+#timenow {
+  float: right;
+  font-size: smaller;
+}
+
+
+/* Navigation */
+
+#navigation {
+  margin-top: 110px;
+}
+
+#navigation li {
+  float: left;
+  font-size: 120%;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-right: 10px;
+  list-style-type: none;
+}
+
+#navigation li a {
+  font-size: 20px;
+  margin-top: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+}
+
+#navigation li a:hover {
+  color: #297A29;
+  border-bottom: 5px solid black;
+}
+
+#navigation a.active {
+  color: #339933;
+  border-bottom: 5px solid black;
+}
+
+a.active {
+  color: #297A29;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #297A29;
+  text-decoration: underline; 
+}
+  
+
+
+/* Main */
+
+.main {
+  margin-top: 20px;
+  /*margin-left: 20px;
+  margin-right: 20px;*/
+}
+
+.main_content {
+  background-color: #FCFCFC;
+  padding: 20px 20px;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+  border-bottom: 1px inset #848484;
+  border-right: 1px inset #848484;
+}
+
+.container-fluid > .sidebar-right {
+  float: right;
+}
+
+.hero-unit {
+    background-color: #FCFCFC;
+    border-bottom: 1px inset #848484;
+    border-right: 1px inset #848484;
+    margin-bottom: none;
+	float: center;
+}
+
+.table-striped tbody tr:nth-child(2n+1) td, .table-striped tbody tr:nth-child(2n+1) th {
+    background-color: #F5F5F5;
+}
+
+.change_round {
+  margin-bottom: 5px;
+}
+
+.nextround {
+  float: right;
+}
+
+/* Feedback Sidebar */
+.well {
+    background-color: #FCFCFC;
+    border-bottom: 1px inset #848484;
+    border-right: 1px inset #848484;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 19px;
+}
+/* Sign up or in */
+
+
+.zusatzlink a {
+  color: red;
+  font-size: 10px;
+  font-weight: 50;
+}
+
+/* Footer */
+
+#footer {
+  background-color: #FCFCFC;
+  overflow: hidden;
+  height: 60px;
+  margin-top: 20px;
+  -moz-border-radius-topright:    10px;
+  -moz-border-radius-topleft:    10px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top: 1px outset #848484;
+}
+
+#footer_nav ul {
+  float: left;
+}
+
+#footer_nav li {
+  float: left;
+  font-size: 120%;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-right: 20px;
+  list-style-type: none;
+}
+
+#footer_version p {
+  float:right;
+  font-size: 80%;
+  margin-right: 10px;
+
+}
+
+#footer_logo img {
+  float: right;
+  margin-right: 10px;
+}
+
+/* Abgabe-Forms */
+
+input#bet_home_bet {
+  width: 40px;
+  margin-bottom: 0px;
+}
+input#bet_away_bet {
+  width: 40px;
+  margin-bottom: 0px;
+}
+
+form.new_bet {
+  margin: 0 0 0px;
+}
+
+form.edit_bet {
+  margin: 0 0 0px;
+}
+
+/* Devise Forms */
+.devise_form {
+  width: 370px;
+  background-color: #FCFCFC;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+  border-bottom: 1px inset #848484;
+  border-right: 1px inset #848484;
+}
+
+.devise_form_field {
+  line-height: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+

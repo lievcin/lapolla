@@ -1,0 +1,25 @@
+<h3>List of cups</h3>
+<br />
+
+<table class="table table-striped table-condensed">
+  <tr>
+    <th>Name</th>
+    <th>Actions</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cups.each do |cup| %>
+  <tr>
+    <td><%= cup.name %></td>
+    <td><%= link_to 'Rondas', cup_rounds_url(cup) %></td>
+    <td><%= link_to 'Edit', edit_cup_path(cup) %></td>
+    <td><%= link_to 'Destroy', cup, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cup', new_cup_path %>

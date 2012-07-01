@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Kickoff:</b>
+  <%= @game.kickoff.strftime("%d.%m.%y %H:%M") %>
+</p>
+<p>
+  <b>Cup</b>
+  <%= @cup.name %>
+</p>
+<p>
+  <b>Round</b>
+  <%= @round.name %>
+</p>
+<p>
+  <b>Home team:</b>
+  <%= Team.find(@game.home_team).name %>
+</p>
+<p>
+  <b>Away team:</b>
+  <%= Team.find(@game.away_team).name %>
+</p>
+<p>
+  <b>Home score:</b>
+  <%= @game.home_score %>
+</p>
+<p>
+  <b>Away score:</b>
+  <%= @game.away_score %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path(:round_id => @round.id) %>

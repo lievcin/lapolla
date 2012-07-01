@@ -1,0 +1,34 @@
+<form method="get">
+	<%= select_tag(:cup_id, options_from_collection_for_select(@cup_options, "id", "name", selected = @cup.id)) %>
+	<input type="submit" value="Filter" %>
+</form>
+
+<div class="main_content">
+	<table class="table table-striped table-condensed">
+		<tr>
+			<th>User</th>
+			<th>Total Points</th>
+			<% @rounds.each do |round| %>
+				<th><%= round.name %></th>
+			<% end %>
+		</tr>
+		<tr>
+		<% @rankingusers.sort_by {|key, value| value}.reverse.each do |user_id, cup_points| %>
+			<% user = User.find(user_id) %>
+			<% if user == current_user %>
+				<td><b><%= user.username %></b></td>
+				<td><b><%= "#{cup_points}" %></b></td>
+				<% @rounds.each do |round| %>
+					<td><b><%= get_round_points(user, round)%></b></td>
+				<% end %>
+			<% else %>
+				<td><%= user.username %></td>
+				<td><%= "#{cup_points}" %></td>
+				<% @rounds.each do |round| %>
+					<td><%= get_round_points(user, round)%></td>
+				<% end %>
+			<% end %>
+			</tr>
+		<% end %>
+	</table>
+</div>

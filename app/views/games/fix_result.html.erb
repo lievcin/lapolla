@@ -1,0 +1,34 @@
+<h1>Spiel bearbeiten</h1>
+
+<%= form_for(@game, :url => save_result_game_path(@game)) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="fixture">
+  	<%= Team.find(@game.home_team).name %> : <%= Team.find(@game.away_team).name %>
+
+   <div class="field">
+    <%= f.label :home_score %><br />
+    <%= f.number_field :home_score %>
+  </div>
+  <div class="field">
+    <%= f.label :away_score %><br />
+    <%= f.number_field :away_score %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to "Enter Results", :controller => "games", :action => "result_index"%>

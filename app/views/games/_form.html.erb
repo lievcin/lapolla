@@ -1,0 +1,29 @@
+<%= simple_form_for(@game) do |f| %>
+  <%= f.error_notification %>
+
+  <h4>Cup: <%= @cup.name %></h4>
+  <h4>Round: <%= @round.name %></h4>
+<br />
+
+  <div class="form-inputs">
+    <%= f.input :kickoff%>
+    <%= f.input :home_score %>
+    <%= f.input :away_score %>
+    <%= f.input :round_id, :as => :hidden, :input_html => { :value => @round.id }%>
+    <%= f.input :home_team, :collection => @teams %>
+    <%= f.input :away_team, :collection => @teams %>
+  </div>
+  <% unless @game.away_score.nil? %>
+    <div class="field">
+      <%= f.label :home_score %><br />
+      <%= f.number_field :home_score %>
+    </div>
+    <div class="field">
+      <%= f.label :away_score %><br />
+      <%= f.number_field :away_score %>
+    </div>
+  <% end -%>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

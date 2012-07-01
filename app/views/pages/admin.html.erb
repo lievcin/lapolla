@@ -1,0 +1,22 @@
+<h2>Admin Übersicht</h2>
+
+<p>Willkommen im streng bewachten Kernstück von tipp2!</p>
+
+<h3>Menü</h3>
+
+<div class="row">
+	<div class="span4">
+
+		<ul class="nav nav-list">
+			<li><%= link_to "Wettbewerbe, Spieltage oder Spiele bearbeiten", cups_path %></li>
+			<li><%= link_to "Ergebnisse eintragen", :controller => "games", :action => "result_index"%></li>
+			<li><%= link_to "Teams bearbeiten", teams_path %></li>
+			<li><%= link_to "User bearbeiten", users_path %></li>
+			<li><%= link_to "Posts bearbeiten", posts_path %></li>
+		</ul>
+	</div>
+	<div class="span8">
+	</div>
+</div>
+<br>
+<p>Hier kommt später eine Übersicht mit den aktuellen Spielen, um Ergebnisse direkt einzugeben.</p>

@@ -1,0 +1,43 @@
+<h3>Round of <%= @cup.name %></h3>
+<br />
+
+<table class="table table-striped table-condensed">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Games</th>
+    <th>Time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+    <% @rounds.each do |round| %>
+        <% g = Game.where(:round_id => round.id) %>
+        <tr>
+            <td><%= round.leg %></td>
+            <td><%= round.name %></td>
+            <td> 
+                <%= g.count %>
+            </td>
+            <td>
+                <% if g.count == 0 %>
+                    -
+                <% else %>
+                    <% gfirst = g.order('kickoff').first %>
+                    <%= gfirst.kickoff.strftime("%d.%m.%y") %> - 
+                    <% glast = g.order('kickoff').last %>
+                    <%= glast.kickoff.strftime("%d.%m.%y") %>
+                <% end %>
+            </td>
+            <td><%= link_to 'Games', games_path(:round_id => round.id) %></td>
+            <td><%= link_to 'Edit', edit_cup_round_path(@cup, round) %></td>
+            <td><%= link_to 'Delete', [@cup, round], :confirm => 'Are you sure you want to delete?', :method => :delete %></td>
+        </tr>
+    <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Round', new_cup_round_path %>
+<%= link_to 'Cups', cups_path %>

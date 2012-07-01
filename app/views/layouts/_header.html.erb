@@ -1,0 +1,32 @@
+<div id="header">
+  <div id="logo">
+    <% logo = image_tag("Football_128.png", :alt => "El mega Pollon") %>
+    <%= link_to logo, root_path %>
+  </div>
+  <div id="head_right">
+    <div id="session_info">
+      <% if user_signed_in? %>
+          Signed as <%= current_user.username %> - <%= link_to '<i class="icon-user"></i>'.html_safe, edit_user_registration_path, :title => "Edit Profile" %> <%= active_link_to "Edit Profile", edit_user_registration_path %> - 
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <% else %>
+          <%= link_to "Register", new_user_registration_path %> or
+          <%= link_to "Sign in", new_user_session_path %>
+      <% end %>
+
+      <% if admin_signed_in? %>
+          <br> Sign as Admin <%= current_admin.username %>, 
+          <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %> <%= link_to 'Backend', admin_path %>
+      <% end %>
+    </div>
+    </br>
+  </div>
+  <div id="navigation">
+    <ul>
+      <li id="li_home"><%= active_link_to "Home", root_path %></li>
+      <li id="li_home"><%= active_link_to "Submit Bets", bet_submission_path %></li>
+      <li id="li_home"><%= active_link_to "Overview", overview_path %></li>
+      <li id="li_home"><%= active_link_to "Rankings", ranking_path %></li>
+    </ul>
+  </div>
+    
+</div>

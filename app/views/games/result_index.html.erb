@@ -1,0 +1,24 @@
+<h3>Enter Results</h3>
+
+<table class="table table-striped table-condensed">
+  <tr>
+    <th>Kick Off</th>
+    <th>Home Team</th>
+    <th>Away Team</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @games.each do |game| %>
+  <tr>
+    <td><%= game.kickoff.strftime("%d.%m.%y %H:%M") %></td>
+    <td><%= Team.find(game.home_team).name %></td>
+    <td><%= Team.find(game.away_team).name %></td>
+    <td><%= link_to "Enter Result", fix_result_game_path(game) %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
