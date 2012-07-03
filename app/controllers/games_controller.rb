@@ -86,7 +86,6 @@ class GamesController < ApplicationController
 
 		if @game.update_attributes(params[:game])
 			flash[:success] = "Results saved"
-			# do some point-updating here
 			@bets.each do |bet|
 				p = points_per_game(@game.home_score, @game.away_score, bet.home_bet, bet.away_bet)
 				bet.points = p

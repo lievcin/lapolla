@@ -14,5 +14,5 @@ class Game < ActiveRecord::Base
 	validates :away_team,	:presence => true
 	validates_numericality_of :home_score, :only_integer => true, :allow_nil => true
 	validates_numericality_of :away_score, :only_integer => true, :allow_nil => true
-	
+  
 end

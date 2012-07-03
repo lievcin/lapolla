@@ -110,7 +110,6 @@ class BetsController < ApplicationController
 		end
 
 		@rounds = @cup.rounds.order('leg ASC')
-		#hier active_rounds filtern -> runden in denen schon punkte verteilt wurden
 		@users = User.all
 		@rankingusers = get_ranking(@users, @cup)
 	end
